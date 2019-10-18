@@ -26,4 +26,5 @@ public interface NewsDao {
     List<News> selectByUserIdAndOffset(@Param("userId") int userId,
                                        @Param("offset") int offset,
                                        @Param("limit") int limit);
+    //建文件夹要分开建
 }

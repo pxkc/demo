@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <pre>
+            hello VM.
+            {value1}
+
+            #foreach ($color in $colors)
+                Color $!{foreach.index}/$!{foreach.count}: $!{color}
+            #end
+
+            #foreach($key in $map.keySet())
+                Number $!{foreach.index}/$!{foreach.count}: $!{key} $!map.get($key)##!代表出现或者不出现
+            #end
+
+            #foreach($kv in $map.entrySet())
+                Number $!{foreach.index}/$!{foreach.count}: ${kv.key} ${kv.value}
+            #end
+
+            User:$!{user.name}
+            User:$!{user.getName()}
+
+            #set($title = "nowcoder")
+            Include: #include("header.vm") <br>
+            Parse:#parse("header.vm")
+
+
+            #macro (render_color, $color, $index)
+                Color By Macro $index, $color
+            #end  ##定义的函数
+
+            #foreach ($color in $colors)
+                #render_color($color, $foreach.index)
+            #end
+        </pre>
+
+    </body>
+</html>

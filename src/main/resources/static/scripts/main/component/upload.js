@@ -1,5 +1,5 @@
 /**
-var oUpload = new Upload({
+ var oUpload = new Upload({
     targetEl: Object, 上传按钮
     name: String, 文件的name
     url: String, 上传路径
@@ -52,7 +52,7 @@ var oUpload = new Upload({
         var nWidth = oTargetEl.outerWidth();
         var nHeight = oTargetEl.outerHeight();
         // 位置
-        oEl.css({top:0, left: 0, width: nWidth, height: nHeight});
+        oEl.css({top: 0, left: 0, width: nWidth, height: nHeight});
         // 调整大小
         that.fileEl.outerWidth(nWidth);
         that.fileEl.outerHeight(nHeight);

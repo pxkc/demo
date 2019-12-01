@@ -7,8 +7,6 @@ import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
@@ -28,10 +26,10 @@ public class LogAspect {
     private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
 
     @Before("execution(* com.nowcoder.demo.controller.*Controller.*(..))")//对专门的controller的切面编程
-    public void beforeMethod(JoinPoint joinPoint){
+    public void beforeMethod(JoinPoint joinPoint) {
         StringBuilder sb = new StringBuilder();
-        for(Object arg: joinPoint.getArgs()){
-            sb.append("args:" + arg.toString() +"| ");
+        for (Object arg : joinPoint.getArgs()) {
+            sb.append("args:" + arg.toString() + "| ");
         }
 
         logger.info("before method:" + sb.toString());//打印出参数
@@ -40,7 +38,7 @@ public class LogAspect {
     }
 
     @After("execution(* com.nowcoder.demo.controller.IndexController.*(..))")
-    public void afterMethod(JoinPoint joinPoint ){
+    public void afterMethod(JoinPoint joinPoint) {
         logger.info("after method:");
     }
 }

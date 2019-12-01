@@ -191,7 +191,8 @@
     }
 
     function fInherit(oChild, oParent, oExtend) {
-        var Inheritance = function() {};
+        var Inheritance = function () {
+        };
         Inheritance.prototype = oParent.prototype;
         oChild.prototype = new Inheritance();
         oChild.prototype.constructor = oChild;

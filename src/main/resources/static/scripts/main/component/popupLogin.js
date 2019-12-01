@@ -7,27 +7,27 @@
     Base.mix(PopupLogin, Component, {
         _tpl: [
             '<div class="wrapper-content clearfix">',
-                '<div class="input-section">',
-                    '<div class="form-group">',
-                        '<label class="control-label">电子邮箱</label>',
-                        '<div class="control-group js-email"><input type="email" placeholder="请输入邮箱"></div>',
-                    '</div>',
-                    '<div class="form-group">',
-                        '<label class="control-label">密码</label>',
-                        '<div class="control-group js-pwd"><input type="password" placeholder="请输入密码"></div>',
-                    '</div>',
-                    '<div class="form-group about-pwd">',
-                        '<div class="keep-pwd">',
-                            '<label><input type="checkbox" class="js-rember"> 记住登录</label>',
-                        '</div>',
-                    '</div>',
-                    '<div class="form-group">',
-                        '<div class="col-input-login">',
-                            '<a class="btn btn-info js-login" href="javascript:void(0);">登陆</a>',
-                            '<a class="btn btn-info js-register" href="javascript:void(0);">注册</a>',
-                        '</div>',
-                    '</div>',
-                '</div>',
+            '<div class="input-section">',
+            '<div class="form-group">',
+            '<label class="control-label">电子邮箱</label>',
+            '<div class="control-group js-email"><input type="email" placeholder="请输入邮箱"></div>',
+            '</div>',
+            '<div class="form-group">',
+            '<label class="control-label">密码</label>',
+            '<div class="control-group js-pwd"><input type="password" placeholder="请输入密码"></div>',
+            '</div>',
+            '<div class="form-group about-pwd">',
+            '<div class="keep-pwd">',
+            '<label><input type="checkbox" class="js-rember"> 记住登录</label>',
+            '</div>',
+            '</div>',
+            '<div class="form-group">',
+            '<div class="col-input-login">',
+            '<a class="btn btn-info js-login" href="javascript:void(0);">登陆</a>',
+            '<a class="btn btn-info js-register" href="javascript:void(0);">注册</a>',
+            '</div>',
+            '</div>',
+            '</div>',
             '</div>'].join(''),
         listeners: [{
             name: 'render',
@@ -182,7 +182,7 @@
             oIpt.append('<i class="input-icon icon-ok-sign"></i>');
         }
     }
-    
+
     function fIptError(oIpt, sMsg) {
         var that = this;
         oIpt = $(oIpt);

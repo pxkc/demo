@@ -1,5 +1,5 @@
 /**
-var oPopup = new Popup({
+ var oPopup = new Popup({
    title: String, 标题
    content: String, 内容
    width: Number, 宽度
@@ -14,11 +14,11 @@ var oPopup = new Popup({
         zIndex: 100,
         _tpl: [
             '<div class="pop-box">',
-                '<div class="pop-title">',
-                    '<a href="javascript:void(0);" class="pop-close js-close" title="关闭"></a>',
-                    '<h1>#{title}</h1>',
-                '</div>',
-                '<div class="pop-content">#{content}</div>',
+            '<div class="pop-title">',
+            '<a href="javascript:void(0);" class="pop-close js-close" title="关闭"></a>',
+            '<h1>#{title}</h1>',
+            '</div>',
+            '<div class="pop-content">#{content}</div>',
             '</div>'].join(''),
         listeners: [{
             name: 'render',

@@ -13,8 +13,8 @@ public class SettingController {
 
     @RequestMapping("/setting")
     @ResponseBody
-    public String setting(){
+    public String setting() {
 
-        return  "setting ok";
+        return "setting: ok";
     }
 }

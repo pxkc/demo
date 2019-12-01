@@ -42,14 +42,13 @@ public class IndexController {
 //    }
 
     /**
-    @RequestMapping(path = {"/", "/index"})//path或者value
-    @ResponseBody
-    public String index(HttpSession session) {
-        logger.info("Visit Index");
-        return "helloworld, " +  session.getAttribute("msg") + "<br>" + toutiaoService.say();
-
-    }
-    **/
+     * @RequestMapping(path = {"/", "/index"})//path或者value
+     * @ResponseBody public String index(HttpSession session) {
+     * logger.info("Visit Index");
+     * return "helloworld, " +  session.getAttribute("msg") + "<br>" + toutiaoService.say();
+     * <p>
+     * }
+     **/
 
 
     //http://localhost:8080/profile/11/33?type=11&key=0
@@ -90,12 +89,12 @@ public class IndexController {
                           HttpSession session) {
         StringBuilder sb = new StringBuilder();
         Enumeration<String> headerNames = request.getHeaderNames();
-        while(headerNames.hasMoreElements()){
+        while (headerNames.hasMoreElements()) {
             String name = headerNames.nextElement();
             sb.append(name + ':' + request.getHeader(name) + "<br>");
         }
 
-        for(Cookie cookie: request.getCookies()){
+        for (Cookie cookie : request.getCookies()) {
             sb.append("cooking");
             sb.append(cookie.getName());
             sb.append(":");
@@ -114,16 +113,16 @@ public class IndexController {
     public String response(@CookieValue(value = "nowcoderid", defaultValue = "a") String nowcoderid,
                            @RequestParam(value = "key", defaultValue = "key") String key,
                            @RequestParam(value = "value", defaultValue = "value") String value,
-                           HttpServletResponse response){
+                           HttpServletResponse response) {
         response.addCookie(new Cookie(key, value));
-        response.addHeader(key,value);
+        response.addHeader(key, value);
         return "NowCoderId from Cookie:" + nowcoderid;//从cookie中获得的id
     }
 
     //跳转
     @RequestMapping(value = "/redirect/{code}")//一次会话代表一次session
-    public String redirect (@PathVariable("code") int code,
-                            HttpSession session) {
+    public String redirect(@PathVariable("code") int code,
+                           HttpSession session) {
 //        RedirectView red = new RedirectView("/", true);
 //        if (code == 301){
 //            red.setStatusCode(HttpStatus.MOVED_PERMANENTLY);
@@ -136,8 +135,8 @@ public class IndexController {
     //业务异常的处理
     @RequestMapping("/admin")
     @ResponseBody
-    public String admin(@RequestParam(value = "key", required = false) String key){
-        if("admin".equals(key)){//传过来的key的字符串是"admin"
+    public String admin(@RequestParam(value = "key", required = false) String key) {
+        if ("admin".equals(key)) {//传过来的key的字符串是"admin"
             return "hello admin";
         }
         throw new IllegalArgumentException("key错误");
@@ -145,11 +144,9 @@ public class IndexController {
 
     @ExceptionHandler()//对统一的错误处理
     @ResponseBody
-    public String error(Exception e){
+    public String error(Exception e) {
         return "error:" + e.getMessage();
     }
-
-
 
 
 }

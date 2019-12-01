@@ -44,11 +44,11 @@
         });
         var oXhr = new XMLHttpRequest();
         // 进度
-        oXhr.upload.addEventListener('progress', function(oEvent) {
+        oXhr.upload.addEventListener('progress', function (oEvent) {
             oConf.progress && oConf.progress.call(null, Math.round(oEvent.loaded * 100 / (oEvent.total || 1)), oEvent.loaded, oEvent.total);
         }, false);
         // 结果
-        oXhr.onreadystatechange = function(oEvent) {
+        oXhr.onreadystatechange = function (oEvent) {
             if (oXhr.readyState !== 4) {
                 return;
             }
@@ -69,7 +69,8 @@
         var oResult = {};
         try {
             oResult = JSON.parse(sStr);
-        } catch (e) {}
+        } catch (e) {
+        }
         return oResult;
     }
 })(window);
